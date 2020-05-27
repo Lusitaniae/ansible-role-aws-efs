@@ -44,6 +44,23 @@ Basic usage is:
         filesystem_id: "fs-someid"
 ```
 
+With all variables explicitely defined:
+
+```
+- hosts: all
+  roles:
+  - role: thiagoalmeidasa.aws_efs
+    vars:
+      aws_efs_paths:
+      - path: "/path"
+        owner: "root"
+        group: "root"
+        mode: "0644"
+        region: "eu-west-1"
+        filesystem_id: "fs-someid"
+        state: "mounted",
+        opts: "nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2"
+```
 ### Install with git
 
 If you do not want a global installation, clone it into your `roles_path`.
