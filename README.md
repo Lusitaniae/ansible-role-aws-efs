@@ -46,7 +46,7 @@ Basic usage is:
 
 With all variables explicitely defined:
 
-```
+```yaml
 - hosts: all
   roles:
   - role: thiagoalmeidasa.aws_efs
@@ -75,26 +75,18 @@ But I often add it as a submdule in a given `playbook_dir` repository.
 git submodule add git@github.com:thiagoalmeidasa/ansible-role-aws-efs.git <playbook_dir>/roles/aws_efs
 ```
 
+Include role this way:
+
+```yaml
+- hosts: all
+  roles:
+  - role: aws_efs
+```
+
 As the role is not managed by Ansible Galaxy, you do not have to specify the
 github user account.
 
 ## Role Variables
-
-Variables are divided in three types.
-
-The [default vars](#default-vars) section shows you which variables you may
-override in your ansible inventory. As a matter of fact, all variables should
-be defined there for explicitness, ease of documentation as well as overall
-role manageability.
-
-The [mandatory variables](#mandatory-variables) section contains variables that
-for several reasons do not fit into the default variables. As name implies,
-they must absolutely be defined in the inventory or else the role will
-fail. It is a good thing to avoid reach for these as much as possible and/or
-design the role with clear behavior when they're undefined.
-
-The [context variables](#context-variables) are shown in section below hint you
-on how runtime context may affects role execution.
 
 ### Default vars
 
