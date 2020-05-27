@@ -123,7 +123,7 @@ aws_efs_paths:
 
 ### Mandatory variables
 
-```
+```yaml
 aws_efs_paths:
 - path: ""
   owner: ""
